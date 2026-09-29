@@ -19,6 +19,7 @@ import {
     Toast, Toolbar,
     Tooltip
 } from "primevue";
+import pinia from "@/pinia.js";
 
 const primeUiLicenseKey = import.meta.env.VITE_PRIME_UI_LICENSE_KEY;
 
@@ -55,4 +56,5 @@ createApp(App)
     .component('pv-toolbar',        Toolbar)
     .component('pv-toast',          Toast)
     .directive('tooltip',           Tooltip)
+    .use(pinia)
     .mount('#app')
