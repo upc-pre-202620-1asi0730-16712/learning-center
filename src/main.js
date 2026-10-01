@@ -20,6 +20,7 @@ import {
     Tooltip
 } from "primevue";
 import pinia from "@/pinia.js";
+import router from "@/router.js";
 
 const primeUiLicenseKey = import.meta.env.VITE_PRIME_UI_LICENSE_KEY;
 
@@ -57,4 +58,5 @@ createApp(App)
     .component('pv-toast',          Toast)
     .directive('tooltip',           Tooltip)
     .use(pinia)
+    .use(router)
     .mount('#app')
