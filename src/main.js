@@ -10,13 +10,14 @@ import {
     Button,
     Card,
     Checkbox,
-    Column,
+    Column, ConfirmationService,
     ConfirmDialog,
     DataTable,
-    Dialog, Drawer, FileUpload, FloatLabel, IconField, InputIcon, InputNumber, InputText, Menu, Rating, Row,
+    Dialog,
+    DialogService, Drawer, FileUpload, FloatLabel, IconField, InputIcon, InputNumber, InputText, Menu, Rating, Row,
     Select,
     SelectButton, Tag, Textarea,
-    Toast, Toolbar,
+    Toast, ToastService, Toolbar,
     Tooltip
 } from "primevue";
 import pinia from "@/pinia.js";
@@ -33,6 +34,9 @@ createApp(App)
         },
         license: primeUiLicenseKey
     })
+    .use(ConfirmationService)
+    .use(DialogService)
+    .use(ToastService)
     .component('pv-button',         Button)
     .component('pv-card',           Card)
     .component('pv-column',         Column)
