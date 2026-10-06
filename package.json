@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.8",
+    "json-server": "^0.17.4",
     "vite": "^8.2.2",
     "vite-plugin-vue-devtools": "^8.2.1"
   },
