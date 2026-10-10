@@ -76,13 +76,14 @@ const useIamStore = defineStore('iam', () => {
         });
     }
 
-    function signOut() {
+    function signOut(router) {
         currentUsername.value = null;
         currentUserId.value = 0;
         localStorage.removeItem('token');
         isSignedIn.value = false;
         console.log('User signed out');
         errors.value = [];
+        router.push({name: 'iam-sign-in'});
     }
 
     function fetchUsers() {
