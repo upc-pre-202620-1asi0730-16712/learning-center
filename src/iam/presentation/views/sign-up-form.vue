@@ -3,6 +3,8 @@
 import useIamStore from "@/iam/application/iam.store.js";
 import {useRouter} from "vue-router";
 import {FloatLabel as PvFloatLabel} from "primevue";
+import {SignUpCommand} from "@/iam/domain/sign-up.command.js";
+import {reactive} from "vue";
 
 const router = useRouter();
 const store = useIamStore();
