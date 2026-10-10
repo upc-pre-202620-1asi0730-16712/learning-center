@@ -1,6 +1,6 @@
 import {IamApi} from "@/iam/infrastructure/iam-api.js";
 import {defineStore} from "pinia";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {SignInAssembler} from "@/iam/infrastructure/sign-in.assembler.js";
 import {UserAssembler} from "@/iam/infrastructure/user.assembler.js";
 import {SignUpAssembler} from "@/iam/infrastructure/sign-up.assembler.js";
@@ -22,7 +22,9 @@ const useIamStore = defineStore('iam', () => {
 
     const currentUserId = ref(0);
 
-    const currentToken = ref(null);
+    const currentToken = computed(
+        () => isSignedIn.value ? localStorage.getItem('token') : null
+    );
 
     function signIn(signInCommand, router) {
         console.log(signInCommand);
