@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import Home from "@/shared/presentation/views/home.vue";
 import publishingRoutes from "@/publishing/presentation/publishing-routes.js";
 import iamRoutes from "@/iam/presentation/iam-routes.js";
+import {authenticationGuard} from "@/iam/infrastructure/authentication.guard.js";
 
 const about = () => import("@/shared/presentation/views/about.vue");
 const pageNotFound = () => import("@/shared/presentation/views/page-not-found.vue");
@@ -58,6 +59,9 @@ router.beforeEach((to, from) => {
     let baseTitle = 'ACME Learning Center';
     document.title = `${baseTitle} - ${to.meta.title || ''}`;
 
+    // When IAM is implemented, use:
+    // return authenticationGuard(to, from);
+    // if not, use:
     return true;
 })
 
